@@ -59,9 +59,33 @@ module.exports = class UserController {
         } catch(error) {
             res.status(500).json({message: error})
         }
+    }
 
+    static async login (req, res) {
+        const {email, password} = req.body
 
+        if(!email) {
+            res.status(422).json({message: 'Preencha o campo de email'})
+        }
 
+        if(!password) {
+            res.status(422).json({message: 'Preencha o campo de senha'})
+            return
+        }
+
+        const user = await User.findOne({email: email})
+
+        if(!user) {
+            res.status(422).json({message: 'Este email não está cadastrado'})
+            return
+        }
+
+        const checkPassowd = await bcrypt.compare(password, user.password)
+        
+        if(!checkPassowd) {
+            res.status(422).json({message: 'Senha inválida'})
+            return
+        }
 
     }
 
