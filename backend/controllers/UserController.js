@@ -92,6 +92,8 @@ module.exports = class UserController {
             res.status(422).json({message: 'Senha inválida'})
             return
         }
+
+        await createUserToken(user, req, res);
     }
 
     static async checkUser(req, res) {
