@@ -27,22 +27,22 @@ export default function Register() {
         <Input
           text="Nome"
           type="text"
-          name="nome"
+          name="name"
           placeholder="Digite seu nome"
           handleOnChange={handleChange}
         />
+          <Input
+            text="Email"
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+            handleOnChange={handleChange}
+          />
         <Input
           text="Telefone"
           type="text"
           name="phone"
           placeholder="Digite seu nome telefone"
-          handleOnChange={handleChange}
-        />
-        <Input
-          text="Email"
-          type="email"
-          name="email"
-          placeholder="Digite seu email"
           handleOnChange={handleChange}
         />
         <Input
