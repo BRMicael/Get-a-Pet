@@ -22,7 +22,7 @@ export default function Navbar() {
           (
             <>
         <li>
-          <Link to='/login'>Entrar</Link>
+          <Link to='/login'>Login</Link>
         </li>
         <li>
           <Link to='/register'>Cadastrar</Link>
