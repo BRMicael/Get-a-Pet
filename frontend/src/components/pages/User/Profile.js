@@ -4,6 +4,7 @@ import formStyles from "../../form/Form.module.css";
 import Input from "../../form/Input";
 import api from "../../../utils/api";
 import useFlashMessage from '../../../hooks/useFlashMessage'
+import RoundedImage from "../../layout/RoundedImage";
 
 export default function Profile() {
     const [user, setUser] = useState({});
@@ -60,7 +61,7 @@ export default function Profile() {
       <div className={style.profile_header}>
       <h1>Perfil</h1>
         {(user.image || preview) && (
-          <img src={
+          <RoundedImage src={
             preview ? URL.createObjectURL(preview)
             : `${process.env.REACT_APP_API}/images/users/${user.image}`
           } 
