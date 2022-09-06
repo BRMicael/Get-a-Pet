@@ -19,6 +19,9 @@ export default function Navbar() {
         </li>
         {authenticated ? (
           <>
+          <li>
+            <Link to="/pet/mypets">Meus pets</Link>
+          </li>
           <li onClick={logout}>
             <Link to="/">Sair</Link>
           </li>
