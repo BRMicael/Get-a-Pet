@@ -34,11 +34,7 @@ export default function useAuth(){
         setFlashMessage(msgText, msgType);
     }
 
-    async function authUser(data){
-        setAuthenticated(true);
-        localStorage.setItem('token', JSON.stringify(data.token));
-        navigate("/");
-    }
+
 
     async function login(user){
         let msgText = 'Login realizado com sucesso';
@@ -57,6 +53,12 @@ export default function useAuth(){
         }
         setFlashMessage(msgText, msgType);
 
+    }
+
+    async function authUser(data){
+        setAuthenticated(true);
+        localStorage.setItem('token', JSON.stringify(data.token));
+        navigate("/");
     }
 
     function logout() {

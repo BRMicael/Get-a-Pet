@@ -150,6 +150,9 @@ module.exports = class PetController {
             res.status(422).json({message: 'Houve um problema em solicitar sua atualização'})
             return;
         }
+
+        await Pet.findByIdAndRemove(id);
+        res.status(200).json({message: "Pet removido com sucesso!"})
     }
 
     static async updatePet(req, res) {
