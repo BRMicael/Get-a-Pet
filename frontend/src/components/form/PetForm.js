@@ -38,7 +38,7 @@ export default function PetForm({handleSubmit, petData, btnText}) {
                 key={`${pet.name}+${index}`}
               />
             ))
-            : pet.images && preview.map((image, index) => (
+            : pet.images && pet.images.map((image, index) => (
               <img
                 src={`${process.env.REACT_APP_API}/images/pets/${image}`}
                 alt={pet.name}

@@ -211,10 +211,7 @@ module.exports = class PetController {
 
 
         
-        if(images.length === 0) {
-            res.status(422).json({message: 'Envie imagens para que os adotantes possam ver seu pet!'})
-            return
-        }else{
+        if(images.length > 0) {
             updatedData.images = [];
             images.map((image) => {
                 updatedData.images.push(image.filename);
