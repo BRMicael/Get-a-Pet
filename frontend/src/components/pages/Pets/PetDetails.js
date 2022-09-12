@@ -17,6 +17,23 @@ export default function PetDetails() {
         })
     }, [id])
 
+    async function schedule() {
+        let msgType = 'success';
+
+        const data = await api
+        .patch(`pets/schedule/${pet._id}`, {
+            Authorization: `Bearer ${JSON.parse(token)}`
+        })
+        .then((response) => {
+            return response.data
+        })
+        .catch((err) => {
+            msgType = 'error';
+            return err.response.data;
+        })
+
+        setFlashMessage(data.message, msgType)
+    }
 
   return (
     <>
@@ -44,7 +61,9 @@ export default function PetDetails() {
                     </p>
                     {
                         token ? (
-                            <button>Solicitar uma visita</button>
+                            <button onClick={() => {
+                                schedule()
+                            }}>Solicitar uma visita</button>
                         ) : (
                             <p><Link to='/register'>Crie sua conta</Link> e adquira seu novo Pet.</p>
                         )
