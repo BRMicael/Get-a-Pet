@@ -11,7 +11,8 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_logo}>
-        <img src={Logo} alt="Get A Pet" />
+      <Link to="/"><img src={Logo} alt="Get A Pet" /></Link>
+      <p>Get a Pet</p>
       </div>
       <ul>
         <li>

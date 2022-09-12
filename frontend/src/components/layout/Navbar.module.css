@@ -9,6 +9,12 @@
 .navbar_logo{
     display: flex;
     align-items: center;
+    flex-direction: row;
+}
+
+.navbar_logo p {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .navbar_logo img{
